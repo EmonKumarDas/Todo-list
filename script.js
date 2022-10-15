@@ -29,15 +29,18 @@ document.getElementById("add-todo").addEventListener("click", () => {
 const getTodoList = () => {
     const TodoList = JSON.parse(localStorage.getItem("todo-list"));
     let ulvalue = document.getElementById("todo-list");
-
+    ulvalue.innerText = "";
     TodoList.forEach(elements => {
         let li = document.createElement("li");
         li.classList = ("bg-red-600 p-2 rounded mt-2 w-full");
         li.innerText = elements.todo;
         ulvalue.appendChild(li);
     });
-
-
-
 }
 getTodoList();
+
+let ClearData = () => {
+    JSON.parse(localStorage.removeItem("todo-list"));
+    getTodoList();
+}
+
