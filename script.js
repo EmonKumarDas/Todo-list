@@ -40,7 +40,7 @@ const getTodoList = () => {
 getTodoList();
 
 let ClearData = () => {
-    JSON.parse(localStorage.removeItem("todo-list"));
+    localStorage.removeItem("todo-list");
     getTodoList();
 }
 
